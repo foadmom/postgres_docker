@@ -1,6 +1,12 @@
+# docker run --name cloudbeaver --rm -ti -p 127.0.0.1:8978:8978 -v /var/
+# cloudbeaver/workspace:/opt/cloudbeaver/workspace dbeaver/cloudbeaver:latest
+# sudo docker pull postgis/postgis:latest
+# sudo docker exec -it postgres psql -h localhost -U postgres
+# cat naptan_stops.sql | docker exec -i postgres psql -h localhost -U postgres -f-
 services:
   postgres:
-    image: postgres:latest
+    image: postgis/postgis:latest
+    container_name: postgres
     restart: always
     environment:
       POSTGRES_PASSWORD: postgres
@@ -9,6 +15,7 @@ services:
     volumes:
       # - /home/foadm/data/postgres/18:/var/lib/postgresql/18/docker
       - /data/postgres/18:/var/lib/postgresql/18/docker
+    #   - ./:/var/lib/postgresql/18/docker
   
     
 

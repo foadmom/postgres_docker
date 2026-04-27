@@ -7,6 +7,8 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - /home/foadm/data/postgres/18:/var/lib/postgresql/18/docker
+      # - /home/foadm/data/postgres/18:/var/lib/postgresql/18/docker
+      - /data/postgres/18:/var/lib/postgresql/18/docker
+  
     
 
